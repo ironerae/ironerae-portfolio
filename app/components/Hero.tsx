@@ -20,7 +20,7 @@ export default function Hero() {
             <QuickLinks />
           </div>
           <div>
-            <button className="btn btn-neutral btn-lg mt-4 rounded-xl">
+            <button className="btn btn-neutral btn-lg mt-4 rounded-xl border-2 border-secondary">
               View My Work
             </button>
             <button className="btn btn-lg mt-4 ml-4 rounded-xl">

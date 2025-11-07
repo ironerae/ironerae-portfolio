@@ -7,6 +7,7 @@ export default function ThemeControl() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "winter";
+    setTheme(savedTheme);
     document.querySelector("html")!.setAttribute("data-theme", savedTheme);
   }, [theme]);
 
