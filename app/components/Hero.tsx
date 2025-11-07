@@ -3,7 +3,7 @@ import QuickLinks from "./QuickLinks";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen mt-16 md:mt-0">
+    <div className="h-auto md:min-h-screen mt-16 md:mt-0">
       <div className="flex flex-wrap justify-between items-center h-[80%] gap-4">
         <div className="h-full flex flex-col justify-center flex-1">
           <div className="space-y-4">

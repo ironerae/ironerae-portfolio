@@ -13,7 +13,7 @@ const projects = [
   {
     siteLink: "https://aces-fullbrightcollege.vercel.app/",
     projectName: "ACES - Fullbright College Website",
-    projectDate: "Jan 2023",
+    projectDate: "Jan 2025",
     projectDescription:
       "A fully responsive website built for ACES - Fullbright College using Next.js and Tailwind CSS. The website features complete system including MyACES portal, admin dashboard and more",
     projectStacks: [
@@ -71,7 +71,7 @@ const projects = [
       SiHeroku,
     ] as unknown[] as IconType[],
     isPublic: false,
-    sourceCodeLink: "/",
+    sourceCodeLink: "https://github.com/ironerae/CoralTech-Frontend",
     imageSrc: "/images/projects/coraltech.png",
     isHighlight: true,
     reverse: true,
@@ -108,7 +108,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="flex flex-col items-center mt-24">
+    <div className="flex flex-col items-center mt-24" id="projects">
       <h3 className="font-medium">WHAT I'VE BUILT SO FAR</h3>
       <h3 className="text-4xl font-bold text-center">
         Solo and Collaborative Projects
@@ -148,6 +148,7 @@ export default function Projects() {
             )
           )}
       </div>
+      <h1 className="text-2xl text-center mt-16 font-bold">More Projects</h1>
       <div className="flex gap-8 justify-center flex-wrap mt-16">
         {projects
           .filter((project) => !project.isHighlight)

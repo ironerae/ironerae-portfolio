@@ -1,9 +1,12 @@
+"use client";
+
+import scrollToView from "@/utils/scrollToView";
 import QuickLinks from "./QuickLinks";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="footer sm:footer-horizontal mt-24 p-10">
+    <footer className="footer sm:footer-horizontal mt-24">
       <aside>
         <svg
           width="50"
@@ -24,9 +27,15 @@ export default function Footer() {
       </aside>
       <nav>
         <h6 className="footer-title">Sections</h6>
-        <a className="link link-hover">Skills</a>
-        <a className="link link-hover">Projects</a>
-        <a className="link link-hover">Contacts</a>
+        <a className="link link-hover" onClick={() => scrollToView("skills")}>
+          Skills
+        </a>
+        <a className="link link-hover" onClick={() => scrollToView("projects")}>
+          Projects
+        </a>
+        <a className="link link-hover" onClick={() => scrollToView("contact")}>
+          Contact
+        </a>
       </nav>
       <nav>
         <h6 className="footer-title">Social</h6>
