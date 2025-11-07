@@ -1,9 +1,9 @@
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import NavBar from "./components/NavBar";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import Hero from "./Hero";
+import NavBar from "./NavBar";
+import Projects from "./Projects";
+import Skills from "./Skills";
 
 export default function Home() {
   return (

@@ -44,7 +44,7 @@ export default function Footer() {
       <nav>
         <a
           className="link link-hover flex items-center gap-2"
-          href="https://ironerae.github.io/legacy-portfolio/"
+          href="https://ironerae-legacy.vercel.app/"
           target="_blank"
         >
           Legacy Site <FaExternalLinkAlt size={12} />

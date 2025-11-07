@@ -1,5 +1,6 @@
 import Image from "next/image";
 import QuickLinks from "./QuickLinks";
+import HeroButtons from "./HeroButtons";
 
 export default function Hero() {
   return (
@@ -19,14 +20,7 @@ export default function Hero() {
           <div className="flex mt-8">
             <QuickLinks />
           </div>
-          <div>
-            <button className="btn btn-neutral btn-lg mt-4 rounded-xl border-2 border-secondary">
-              View My Work
-            </button>
-            <button className="btn btn-lg mt-4 ml-4 rounded-xl">
-              Let's Connect
-            </button>
-          </div>
+          <HeroButtons />
         </div>
         <div className="h-full">
           <Image

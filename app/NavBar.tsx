@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ThemeControl from "./ThemeControl";
 import scrollToView from "@/utils/scrollToView";
 
@@ -23,6 +24,11 @@ export default function NavBar() {
             </li>
             <li>
               <ThemeControl />
+            </li>
+            <li>
+              <button className="btn btn-neutral btn-sm ml-4">
+                <Link href="/send-note">Send Note</Link>
+              </button>
             </li>
           </ul>
         </div>
