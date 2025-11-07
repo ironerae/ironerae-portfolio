@@ -29,7 +29,7 @@ export default function ProjectsCard({
 }: ProjectsCardProps) {
   if (!isHighlight) {
     return (
-      <div className="card bg-base-100 w-96 shadow-sm">
+      <div className="card bg-base-200 w-96 shadow-sm">
         {siteLink && (
           <div className="tooltip absolute right-2 top-2" data-tip="Visit Site">
             <a className="btn btn-ghost btn-sm" href={siteLink} target="_blank">
