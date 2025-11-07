@@ -3,8 +3,8 @@ import QuickLinks from "./QuickLinks";
 
 export default function Hero() {
   return (
-    <div className="h-screen">
-      <div className="flex flex-wrap justify-between items-center h-[80%]">
+    <div className="min-h-screen">
+      <div className="flex flex-wrap justify-between items-center h-[80%] gap-4">
         <div className="h-full flex flex-col justify-center flex-1">
           <div className="space-y-4">
             <h1 className="text-5xl font-bold">
@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <div className="h-full">
           <Image
-            className="relative -top-4 -right-24"
+            className="md:relative md:-top-4 md:-right-20 rounded-2xl md:rounded-none"
             src="/images/hero.png"
             alt="hero-image"
             width={700}
