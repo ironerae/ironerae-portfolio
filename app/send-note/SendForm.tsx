@@ -77,7 +77,13 @@ export default function SendForm() {
         <textarea
           className="textarea h-24 w-full"
           placeholder="Type your anonymous message here"
-          {...register("message", { required: "Message is required" })}
+          {...register("message", {
+            required: "Message is required",
+            minLength: {
+              value: 5,
+              message: "Message must be at least 5 characters long",
+            },
+          })}
         ></textarea>
         {errors.message && (
           <p className="text-red-500 mt-1">{errors.message.message}</p>
