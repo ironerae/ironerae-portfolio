@@ -4,6 +4,7 @@ import { useReCaptcha } from "next-recaptcha-v3";
 import { uniqueNamesGenerator, Config, names } from "unique-names-generator";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
+import { toast } from "react-toastify";
 
 interface FormData {
   nickname: string;
@@ -20,11 +21,27 @@ export default function SendForm() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const token = await executeRecaptcha("form_submit");
+
+    try {
+      const response = await fetch("/api/send-note", {
+        method: "POST",
+        body: JSON.stringify({ ...data, token }),
+      });
+
+      if (response.ok) {
+        reset();
+        toast.success("Note sent successfully!");
+      }
+    } catch (error) {
+      console.error("Error sending note:", error);
+      toast.error("Failed to send the note. Please try again later.");
+    }
   };
 
   const handleSelectName = () => {
@@ -66,7 +83,10 @@ export default function SendForm() {
           <p className="text-red-500 mt-1">{errors.message.message}</p>
         )}
       </fieldset>
-      <button className="btn btn-neutral mt-4 rounded-xl px-8">
+      <button
+        className="btn btn-neutral mt-4 rounded-xl px-8"
+        disabled={isSubmitting}
+      >
         Send Note
       </button>
     </form>

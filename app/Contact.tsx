@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="flex gap-16 flex-wrap mt-24" id="contact">
+    <div className="flex gap-16 flex-wrap mt-32" id="contact">
       <div className="w-96">
         <h1 className="font-bold text-3xl">Contact Me</h1>
         <p className="mt-4">

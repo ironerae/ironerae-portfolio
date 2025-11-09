@@ -148,7 +148,7 @@ export default function Projects() {
             )
           )}
       </div>
-      <h1 className="text-2xl text-center mt-16 font-bold">More Projects</h1>
+      <h1 className="text-2xl text-center mt-16 font-bold">Other Projects</h1>
       <div className="flex gap-8 justify-center flex-wrap mt-16">
         {projects
           .filter((project) => !project.isHighlight)

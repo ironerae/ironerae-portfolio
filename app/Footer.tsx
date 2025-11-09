@@ -6,7 +6,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="footer sm:footer-horizontal mt-24">
+    <footer className="footer sm:footer-horizontal mt-32 py-10">
       <aside>
         <svg
           width="50"
