@@ -29,7 +29,7 @@ export default function SendForm() {
     const token = await executeRecaptcha("form_submit");
 
     try {
-      const response = await fetch("/api/send-note", {
+      const response = await fetch("/api/note", {
         method: "POST",
         body: JSON.stringify({ ...data, token }),
       });
