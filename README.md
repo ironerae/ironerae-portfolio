@@ -41,7 +41,7 @@ FIREBASE_ADMIN_SDK=
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
+   git clone https://github.com/ironerae/ironerae-portfolio.git
    cd your-portfolio
    ```
 
