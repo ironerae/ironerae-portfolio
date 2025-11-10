@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { RequestBody } from "../api/note/route";
 import { auth } from "@/firebase/auth";
 
 interface Note {
@@ -18,24 +17,28 @@ export default function NotesPageModal() {
   const [error, setError] = useState<string | null>(null);
 
   const fetchNotes = async () => {
-    const token = await auth.currentUser?.getIdToken();
+    try {
+      const token = await auth.currentUser?.getIdToken();
 
-    const response = await fetch("api/note", {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    });
+      const response = await fetch("api/note", {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
 
-    if (response.status === 403) {
-      return setError(
-        "Unauthorized access. You do not have permission to view these notes."
-      );
+      if (response.status === 403) {
+        return setError(
+          "Unauthorized access. You do not have permission to view these notes."
+        );
+      }
+
+      const { data }: NotesResponse = await response.json();
+
+      setNotes(data);
+    } catch (error) {
+      setError("Failed to fetch notes. Please try again later.");
     }
-
-    const { data }: NotesResponse = await response.json();
-
-    setNotes(data);
   };
 
   useEffect(() => {
@@ -45,7 +48,6 @@ export default function NotesPageModal() {
   return (
     <div>
       <button
-        className=""
         onClick={() => {
           const modalElement = document.getElementById(
             "notes-page-modal"
@@ -65,7 +67,13 @@ export default function NotesPageModal() {
           {error ? (
             <p className="text-red-500">{error}</p>
           ) : (
-            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 mt-8">
+              <button
+                className="btn btn-sm absolute left-8 top-2"
+                onClick={fetchNotes}
+              >
+                Refresh
+              </button>
               <table className="table">
                 {/* head */}
                 <thead>

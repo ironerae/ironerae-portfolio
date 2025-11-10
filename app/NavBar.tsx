@@ -3,6 +3,7 @@
 import Link from "next/link";
 import ThemeControl from "./ThemeControl";
 import scrollToView from "@/utils/scrollToView";
+import MobileDropDown from "./MobileDropDown";
 
 export default function NavBar() {
   return (
@@ -11,7 +12,8 @@ export default function NavBar() {
         <div className="flex-1">
           <a className="btn btn-ghost text-xl ">ironerae</a>
         </div>
-        <div className="flex-none">
+        <MobileDropDown />
+        <div className="flex-none hidden md:block">
           <ul className="menu menu-horizontal px-1 items-center">
             <li>
               <a onClick={() => scrollToView("skills")}>Skills</a>

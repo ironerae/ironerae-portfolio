@@ -1,8 +1,8 @@
 import { auth, db } from "@/firebase/admin";
 import { NextResponse } from "next/server";
 
-export interface RequestBody {
-  nickname?: string;
+interface RequestBody {
+  nickname: string;
   message: string;
   token: string;
 }
