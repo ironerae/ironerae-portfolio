@@ -7,8 +7,10 @@ export default function SendNoteLayout({ children }: { children: ReactNode }) {
     <ReCaptchaProvider
       reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
     >
-      <NavBar />
-      {children}
+      <div className="max-w-4xl m-auto p-4">
+        <NavBar />
+        {children}
+      </div>
     </ReCaptchaProvider>
   );
 }

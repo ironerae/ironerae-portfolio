@@ -52,10 +52,10 @@ export default function SendForm() {
 
   return (
     <form
-      className="w-full flex flex-col items-center mt-8 gap-4"
+      className="flex flex-col items-center mt-8 gap-4 w-full max-w-md"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <fieldset className="fieldset w-96">
+      <fieldset className="fieldset w-full">
         <legend className="fieldset-legend">Nickname</legend>
         <div className="relative">
           <input
@@ -72,7 +72,7 @@ export default function SendForm() {
         </div>
         <p className="label">Optional</p>
       </fieldset>
-      <fieldset className="fieldset w-96">
+      <fieldset className="fieldset w-full">
         <legend className="fieldset-legend">Message</legend>
         <textarea
           className="textarea h-24 w-full"

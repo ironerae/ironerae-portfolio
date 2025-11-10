@@ -19,7 +19,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex justify-between items-center px-8 md:px-16 py-6">
+    <div className="flex justify-between items-center py-6">
       <Link
         className="rounded-full bg-neutral p-2 hover:scale-105 transition-transform"
         href="/"
