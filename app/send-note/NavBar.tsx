@@ -12,7 +12,7 @@ export default function NavBar() {
 
   const handleSignIn = async () => {
     try {
-      const result = await signInWithPopup(auth, provider);
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.error("Error during sign-in:", error);
     }
