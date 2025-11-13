@@ -42,7 +42,7 @@ FIREBASE_ADMIN_SDK=
 
    ```bash
    git clone https://github.com/ironerae/ironerae-portfolio.git
-   cd your-portfolio
+   cd ironerae-portfolio
    ```
 
 2. **Install Dependencies**

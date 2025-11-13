@@ -4,10 +4,20 @@ import Link from "next/link";
 import ThemeControl from "./ThemeControl";
 import scrollToView from "@/utils/scrollToView";
 import MobileDropDown from "./MobileDropDown";
+import { motion } from "motion/react";
 
 export default function NavBar() {
   return (
-    <div className="bg-base-100 shadow-sm" id="navbar">
+    <motion.div
+      className="bg-base-100 shadow-sm"
+      id="navbar"
+      initial={{ opacity: 0, width: 0 }}
+      animate={{ opacity: 1, width: "100%" }}
+      transition={{ duration: 0.5 }}
+      viewport={{
+        once: true,
+      }}
+    >
       <div className="max-w-6xl m-auto navbar">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl ">ironerae</a>
@@ -35,6 +45,6 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

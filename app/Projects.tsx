@@ -1,3 +1,5 @@
+"use client";
+
 import { IconType } from "react-icons";
 import ProjectsCard from "./ProjectsCard";
 import {
@@ -8,6 +10,7 @@ import {
   RiVercelFill,
 } from "react-icons/ri";
 import { SiHeroku, SiMongodb } from "react-icons/si";
+import { motion } from "motion/react";
 
 const projects = [
   {
@@ -109,10 +112,28 @@ const projects = [
 export default function Projects() {
   return (
     <div className="flex flex-col items-center mt-24" id="projects">
-      <h3 className="font-medium">WHAT I'VE BUILT SO FAR</h3>
-      <h3 className="text-4xl font-bold text-center">
+      <motion.h3
+        className="font-medium"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{
+          once: true,
+        }}
+      >
+        WHAT I'VE BUILT SO FAR
+      </motion.h3>
+      <motion.h1
+        className="text-4xl font-bold text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{
+          once: true,
+        }}
+      >
         Solo and Collaborative Projects
-      </h3>
+      </motion.h1>
       <div>
         {projects
           .filter((project) => project.isHighlight)
@@ -148,7 +169,17 @@ export default function Projects() {
             )
           )}
       </div>
-      <h1 className="text-2xl text-center mt-16 font-bold">Other Projects</h1>
+      <motion.h3
+        className="text-2xl text-center mt-16 font-bold"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{
+          once: true,
+        }}
+      >
+        Other Projects
+      </motion.h3>
       <div className="flex gap-8 justify-center flex-wrap mt-16">
         {projects
           .filter((project) => !project.isHighlight)

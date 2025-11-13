@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { IconType } from "react-icons";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "motion/react";
 
 interface ProjectsCardProps {
   siteLink?: string;
@@ -29,7 +30,13 @@ export default function ProjectsCard({
 }: ProjectsCardProps) {
   if (!isHighlight) {
     return (
-      <div className="card bg-base-200 max-w-96 w-full shadow-sm">
+      <motion.div
+        className="card bg-base-200 max-w-96 w-full shadow- hover:scale-103 transition-transform duration-300"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         {siteLink && (
           <div className="tooltip absolute right-2 top-2" data-tip="Visit Site">
             <a className="btn btn-ghost btn-sm" href={siteLink} target="_blank">
@@ -75,14 +82,14 @@ export default function ProjectsCard({
               <a
                 href={sourceCodeLink}
                 target="_blank"
-                className="btn btn-black"
+                className="btn btn-neutral"
               >
                 <FaGithub /> Documentation →
               </a>
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
@@ -98,15 +105,39 @@ export default function ProjectsCard({
             className="tooltip"
             data-tip="Repo is publicly accessible to anyone"
           >
-            <div className="badge badge-error">Public</div>
+            <motion.div
+              className="badge badge-error"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Public
+            </motion.div>
           </div>
         ) : (
           <div className="tooltip" data-tip="Repo is private">
-            <div className="badge badge-success">Private</div>
+            <motion.div
+              className="badge badge-success"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Private
+            </motion.div>
           </div>
         )}
         <div className="flex items-center gap-4 mt-2">
-          <h2 className="text-4xl font-bold">{projectName}</h2>
+          <motion.h2
+            className="text-4xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {projectName}
+          </motion.h2>
           {siteLink && (
             <div className="tooltip" data-tip="Visit Site">
               <a
@@ -119,30 +150,75 @@ export default function ProjectsCard({
             </div>
           )}
         </div>
-        <p className="text-sm text-gray-500">{projectDate}</p>
-        <p className="mt-4">{projectDescription}</p>
+        <motion.p
+          className="text-sm text-gray-500"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          {projectDate}
+        </motion.p>
+        <motion.p
+          className="mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          {projectDescription}
+        </motion.p>
         <div className="mt-8">
           {sourceCodeLink && (
-            <a href={sourceCodeLink} target="_blank" className="btn btn-black">
+            <motion.a
+              href={sourceCodeLink}
+              target="_blank"
+              className="btn btn-black"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <FaGithub /> Documentation →
-            </a>
+            </motion.a>
           )}
           <div className="mt-4">
             {projectStacks.map((StackIcon, i) => (
-              <button key={i}>
+              <motion.button
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                viewport={{ once: true }}
+              >
                 <StackIcon key={i} size={30} className="mx-1" />
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
       </div>
-      <Image
-        src={imageSrc}
-        alt={projectName}
-        width={400}
-        height={300}
-        className="rounded-2xl"
-      />
+      <motion.div
+        initial={{ opacity: 0, x: reverse ? -50 : 50 }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+        }}
+        transition={{
+          duration: 0.5,
+          delay: 0.5,
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
+        <Image
+          src={imageSrc}
+          alt={projectName}
+          width={400}
+          height={300}
+          className="rounded-2xl"
+        />
+      </motion.div>
     </div>
   );
 }

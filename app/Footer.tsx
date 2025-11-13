@@ -40,6 +40,13 @@ export default function Footer() {
         >
           Legacy Site <FaExternalLinkAlt size={12} />
         </a>
+        <a
+          className="link link-hover flex items-center gap-2"
+          href="https://github.com/ironerae/ironerae-portfolio"
+          target="_blank"
+        >
+          Source Code <FaExternalLinkAlt size={12} />
+        </a>
       </nav>
     </footer>
   );
