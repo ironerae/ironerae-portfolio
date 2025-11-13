@@ -5,6 +5,21 @@ import QuickLinks from "./QuickLinks";
 import HeroButtons from "./HeroButtons";
 import { motion } from "motion/react";
 
+export const animation = (delay: number = 0) => ({
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay,
+    },
+  },
+});
+
 export default function Hero() {
   return (
     <div className="h-auto md:min-h-screen mt-16 md:mt-0">
@@ -13,34 +28,17 @@ export default function Hero() {
           <div className="space-y-4">
             <motion.h1
               className="text-5xl font-bold"
-              initial={{
-                y: 20,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
+              variants={animation()}
+              initial="initial"
+              animate="animate"
             >
               Hi, I'm <span className="bg-primary text-white">Irone Rae</span>
             </motion.h1>
             <motion.p
               className="text-gray-500 text-lg"
-              initial={{
-                y: 20,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.2,
-              }}
+              variants={animation(0.2)}
+              initial="initial"
+              animate="animate"
             >
               I love turning ideas into real-world projects. Whether it’s
               building applications or dealing with electronics, I enjoy
@@ -49,35 +47,17 @@ export default function Hero() {
           </div>
           <div className="flex mt-8">
             <motion.div
-              initial={{
-                y: 20,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.4,
-              }}
+              variants={animation(0.4)}
+              initial="initial"
+              animate="animate"
             >
               <QuickLinks />
             </motion.div>
           </div>
           <motion.div
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.6,
-            }}
+            variants={animation(0.6)}
+            initial="initial"
+            animate="animate"
           >
             <HeroButtons />
           </motion.div>

@@ -89,7 +89,7 @@ export default function Skills() {
               rotate: 360,
             }}
             transition={{
-              delay: (1 + i) / 10,
+              delay: i * 0.1,
               duration: 0.5,
             }}
             viewport={{

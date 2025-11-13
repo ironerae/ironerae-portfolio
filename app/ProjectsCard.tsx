@@ -16,6 +16,26 @@ interface ProjectsCardProps {
   reverse?: boolean;
 }
 
+const animation = (y: number = 20, delay: number = 0) => ({
+  initial: {
+    y,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay,
+    },
+  },
+});
+
+const fade = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.5 } },
+};
+
 export default function ProjectsCard({
   siteLink,
   projectName,
@@ -32,9 +52,9 @@ export default function ProjectsCard({
     return (
       <motion.div
         className="card bg-base-200 max-w-96 w-full shadow- hover:scale-103 transition-transform duration-300"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={animation(50, 0.2)}
+        initial="initial"
+        whileInView="animate"
         viewport={{ once: true }}
       >
         {siteLink && (
@@ -107,9 +127,9 @@ export default function ProjectsCard({
           >
             <motion.div
               className="badge badge-error"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              variants={fade}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
             >
               Public
@@ -119,9 +139,9 @@ export default function ProjectsCard({
           <div className="tooltip" data-tip="Repo is private">
             <motion.div
               className="badge badge-success"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              variants={fade}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
             >
               Private
@@ -131,9 +151,9 @@ export default function ProjectsCard({
         <div className="flex items-center gap-4 mt-2">
           <motion.h2
             className="text-4xl font-bold"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={animation(20, 0.2)}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
           >
             {projectName}
@@ -152,18 +172,18 @@ export default function ProjectsCard({
         </div>
         <motion.p
           className="text-sm text-gray-500"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          variants={animation(20, 0.3)}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
         >
           {projectDate}
         </motion.p>
         <motion.p
           className="mt-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          variants={animation(20, 0.4)}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
         >
           {projectDescription}
@@ -174,9 +194,9 @@ export default function ProjectsCard({
               href={sourceCodeLink}
               target="_blank"
               className="btn btn-black"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              variants={animation(20, 0.3)}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
             >
               <FaGithub /> Documentation →
@@ -186,9 +206,9 @@ export default function ProjectsCard({
             {projectStacks.map((StackIcon, i) => (
               <motion.button
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                variants={animation(20, 0.4 + i * 0.1)}
+                initial="initial"
+                whileInView="animate"
                 viewport={{ once: true }}
               >
                 <StackIcon key={i} size={30} className="mx-1" />
@@ -205,7 +225,7 @@ export default function ProjectsCard({
         }}
         transition={{
           duration: 0.5,
-          delay: 0.5,
+          delay: 0.2,
         }}
         viewport={{
           once: true,

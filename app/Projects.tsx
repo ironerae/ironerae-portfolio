@@ -11,6 +11,7 @@ import {
 } from "react-icons/ri";
 import { SiHeroku, SiMongodb } from "react-icons/si";
 import { motion } from "motion/react";
+import { animation } from "./Hero";
 
 const projects = [
   {
@@ -114,9 +115,9 @@ export default function Projects() {
     <div className="flex flex-col items-center mt-24" id="projects">
       <motion.h3
         className="font-medium"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={animation()}
+        initial="initial"
+        whileInView="animate"
         viewport={{
           once: true,
         }}
@@ -125,9 +126,9 @@ export default function Projects() {
       </motion.h3>
       <motion.h1
         className="text-4xl font-bold text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        variants={animation(0.2)}
+        initial="initial"
+        whileInView="animate"
         viewport={{
           once: true,
         }}
@@ -171,9 +172,9 @@ export default function Projects() {
       </div>
       <motion.h3
         className="text-2xl text-center mt-16 font-bold"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={animation()}
+        initial="initial"
+        whileInView="animate"
         viewport={{
           once: true,
         }}

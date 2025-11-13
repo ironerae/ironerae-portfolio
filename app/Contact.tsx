@@ -1,3 +1,22 @@
+"use client";
+
+import { motion } from "motion/react";
+
+const expand = {
+  initial: {
+    scale: 0.95,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      delay: 0.2,
+    },
+  },
+};
+
 export default function Contact() {
   return (
     <div className="flex gap-16 flex-wrap mt-32" id="contact">
@@ -14,38 +33,62 @@ export default function Contact() {
         method="POST"
       >
         <legend className="fieldset-legend">Name:</legend>
-        <input
+        <motion.input
           type="text"
           required
           className="input w-full"
           name="name"
           placeholder="Type your name here"
+          variants={expand}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
         />
 
         <legend className="fieldset-legend">Email:</legend>
-        <input
+        <motion.input
           type="email"
           name="email"
           required
           className="input w-full"
           placeholder="Type your email here"
+          variants={expand}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
         />
 
         <legend className="fieldset-legend">Message</legend>
-        <textarea
+        <motion.textarea
           name="message"
           required
           minLength={50}
           className="textarea h-24 w-full"
           placeholder="Type your message here"
-        ></textarea>
+          variants={expand}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        />
 
-        <button
+        <motion.button
           type="submit"
           className="btn mt-6 btn-neutral border-2 border-secondary rounded-xl"
+          variants={expand}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
         >
           Send
-        </button>
+        </motion.button>
       </form>
     </div>
   );
