@@ -2,6 +2,7 @@
 
 import { IoIosArrowUp } from "react-icons/io";
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,15 +28,19 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <>
+    <AnimatePresence>
       {isVisible && (
-        <button
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.3 }}
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 btn btn-primary btn-circle z-50"
         >
-          <IoIosArrowUp size={36} />{" "}
-        </button>
+          <IoIosArrowUp size={36} />
+        </motion.button>
       )}
-    </>
+    </AnimatePresence>
   );
 }

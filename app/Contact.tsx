@@ -29,7 +29,7 @@ export default function Contact() {
       </div>
       <form
         className="flex flex-col flex-1"
-        action="https://formsubmit.co/ironerae@gmail.com"
+        action="https://formsubmit.co/e6e4dbba409c37d6531fbd34293ebc98"
         method="POST"
       >
         <legend className="fieldset-legend">Name:</legend>
