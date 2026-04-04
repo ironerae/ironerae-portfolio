@@ -50,6 +50,19 @@ const projects = [
   },
   {
     siteLink: "",
+    projectName: "cant-ilever Board",
+    projectDate: "March 2026",
+    projectDescription:
+      "A custom 3D printer mainboard powered by the Raspberry Pi Pico (RP2040), designed for ironerae cant-ilever 3D printer. ",
+    projectStacks: [] as unknown[] as IconType[],
+    isPublic: true,
+    sourceCodeLink: "https://github.com/ironerae/cant-ilever-Board",
+    imageSrc: "/images/projects/cant-ilever-board.png",
+    isHighlight: true,
+    reverse: true,
+  },
+  {
+    siteLink: "",
     projectName: "ironerae-amp",
     projectDate: "June 2025",
     projectDescription:
@@ -152,7 +165,7 @@ export default function Projects() {
                 isHighlight,
                 reverse,
               },
-              i
+              i,
             ) => (
               <ProjectsCard
                 key={i}
@@ -167,7 +180,7 @@ export default function Projects() {
                 isHighlight={isHighlight}
                 reverse={reverse}
               />
-            )
+            ),
           )}
       </div>
       <motion.h3
@@ -198,7 +211,7 @@ export default function Projects() {
                 isHighlight,
                 reverse,
               },
-              i
+              i,
             ) => (
               <ProjectsCard
                 key={i}
@@ -213,7 +226,7 @@ export default function Projects() {
                 isHighlight={isHighlight}
                 reverse={reverse}
               />
-            )
+            ),
           )}
       </div>
     </div>
