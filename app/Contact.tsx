@@ -66,7 +66,7 @@ export default function Contact() {
         <motion.textarea
           name="message"
           required
-          minLength={50}
+          minLength={10}
           className="textarea h-24 w-full"
           placeholder="Type your message here"
           variants={expand}

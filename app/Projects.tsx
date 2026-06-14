@@ -50,6 +50,32 @@ const projects = [
   },
   {
     siteLink: "",
+    projectName: "ironerae cant-ilever 3D printer",
+    projectDate: "June 2026",
+    projectDescription:
+      "Developed as a project for the Microprocessor course, the ironerae cant-ilever is a custom-DIY 3D printer that rethinks traditional kinematics. The system utilizes a unique moving-gantry design where the entire cantilever assembly translates along the Y-axis over a stationary build area. At the heart of the system is the cant-ilever board powered by the Raspberry Pi Pico (RP2040) microcontroller and running Klipper firmware.",
+    projectStacks: [] as unknown[] as IconType[],
+    isPublic: false,
+    sourceCodeLink: "https://github.com/ironerae/cant-ilever-3D-Printer",
+    imageSrc: "/images/projects/ironerae-cant-ilever-3d-printer.png",
+    isHighlight: true,
+    reverse: true,
+  },
+  {
+    siteLink: "",
+    projectName: "cant-ilever Board V2",
+    projectDate: "May 2026",
+    projectDescription:
+      "The v2 iteration of the previous custom 3D printer mainboard powered by the Raspberry Pi Pico (RP2040), designed for the ironerae cant-ilever 3D printer. This upgraded version introduces massive improvements, including full 12V copper pours for superior power delivery, opto-isolated heaters, TMC2209 UART support, and a dedicated onboard 5V regulator.",
+    projectStacks: [] as unknown[] as IconType[],
+    isPublic: true,
+    sourceCodeLink: "https://github.com/ironerae/cant-ilever-Board-V2",
+    imageSrc: "/images/projects/cant-ilever-board-v2.png",
+    isHighlight: true,
+    reverse: false,
+  },
+  {
+    siteLink: "",
     projectName: "cant-ilever Board",
     projectDate: "March 2026",
     projectDescription:
