@@ -55,7 +55,7 @@ const projects = [
     projectDescription:
       "A custom-designed, open-source CoreXY kinematic mounting system. It bridges the gap between the heavy-duty front-motor layout of the SolidCore and the clean, stacked belt routing made popular by Voron designs.",
     projectStacks: [] as unknown[] as IconType[],
-    isPublic: false,
+    isPublic: true,
     sourceCodeLink: "https://github.com/ironerae/VorCore-10",
     imageSrc: "/images/projects/vorcore-10.png",
     isHighlight: true,
