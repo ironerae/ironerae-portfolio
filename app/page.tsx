@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import NavBar from "./NavBar";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import VideoArchive from "./VideoArchive";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Projects />
+        <VideoArchive />
         <Contact />
         <Footer />
       </div>

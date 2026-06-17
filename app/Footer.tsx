@@ -11,7 +11,7 @@ export default function Footer() {
       <aside>
         <TbCircleLetterIFilled size={48} />
         <p>
-          &copy; 2025 ironerae
+          &copy; 2025-2026 ironerae
           <br />
           Personal Portfolio Website
         </p>

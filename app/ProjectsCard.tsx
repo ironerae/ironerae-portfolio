@@ -70,7 +70,7 @@ export default function ProjectsCard({
             alt={projectName}
             width={300}
             height={200}
-            className="rounded-xl"
+            className="rounded-xl h-auto"
           />
         </figure>
         <div className="card-body items-center text-center">
@@ -86,10 +86,7 @@ export default function ProjectsCard({
           </div>
           <div className="card-actions items-center w-full justify-around mt-4">
             {isPublic ? (
-              <div
-                className="tooltip"
-                data-tip="Repo is publicly accessible to anyone"
-              >
+              <div className="tooltip" data-tip="Repo is public">
                 <div className="badge badge-error">Public</div>
               </div>
             ) : (
