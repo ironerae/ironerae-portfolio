@@ -163,111 +163,104 @@ const projects = [
 ];
 
 export default function Projects() {
+  const highlightProjects = projects.filter((project) => project.isHighlight);
+  const otherProjects = projects.filter((project) => !project.isHighlight);
+
   return (
-    <div className="flex flex-col items-center mt-24" id="projects">
-      <motion.h3
-        className="font-medium"
-        variants={animation()}
-        initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: true,
-        }}
-      >
-        WHAT I'VE BUILT SO FAR
-      </motion.h3>
-      <motion.h1
-        className="text-4xl font-bold text-center"
-        variants={animation(0.2)}
-        initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: true,
-        }}
-      >
-        Solo and Collaborative Projects
-      </motion.h1>
-      <div>
-        {projects
-          .filter((project) => project.isHighlight)
-          .map(
-            (
-              {
-                siteLink,
-                projectName,
-                projectDate,
-                projectDescription,
-                projectStacks,
-                isPublic,
-                sourceCodeLink,
-                imageSrc,
-                isHighlight,
-                reverse,
-              },
-              i,
-            ) => (
-              <ProjectsCard
-                key={i}
-                siteLink={siteLink}
-                projectName={projectName}
-                projectDate={projectDate}
-                projectDescription={projectDescription}
-                projectStacks={projectStacks}
-                isPublic={isPublic}
-                sourceCodeLink={sourceCodeLink}
-                imageSrc={imageSrc}
-                isHighlight={isHighlight}
-                reverse={reverse}
-              />
-            ),
-          )}
+    <section className="mt-24 scroll-mt-24" id="projects">
+      <div className="rounded-3xl border border-base-300 bg-base-100/80 px-5 py-8 shadow-xl backdrop-blur md:px-8 md:py-10">
+        <div className="flex flex-col gap-10">
+          <motion.div
+            className="max-w-3xl"
+            variants={animation()}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <div className="badge badge-outline badge-lg px-4 py-3">
+              What I've built
+            </div>
+            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
+              Solo and collaborative projects
+            </h2>
+            <p className="mt-5 max-w-2xl text-base text-base-content/70 md:text-lg">
+              A curated set of web platforms, hardware builds, and client work.
+            </p>
+          </motion.div>
+
+          <div className="divider divider-neutral m-0">Featured projects</div>
+
+          <div className="space-y-20">
+            {highlightProjects.map(
+              (
+                {
+                  siteLink,
+                  projectName,
+                  projectDate,
+                  projectDescription,
+                  projectStacks,
+                  isPublic,
+                  sourceCodeLink,
+                  imageSrc,
+                  isHighlight,
+                  reverse,
+                },
+                i,
+              ) => (
+                <ProjectsCard
+                  key={i}
+                  siteLink={siteLink}
+                  projectName={projectName}
+                  projectDate={projectDate}
+                  projectDescription={projectDescription}
+                  projectStacks={projectStacks}
+                  isPublic={isPublic}
+                  sourceCodeLink={sourceCodeLink}
+                  imageSrc={imageSrc}
+                  isHighlight={isHighlight}
+                  reverse={reverse}
+                />
+              ),
+            )}
+          </div>
+
+          <div className="divider divider-neutral m-0">Other projects</div>
+
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {otherProjects.map(
+              (
+                {
+                  siteLink,
+                  projectName,
+                  projectDate,
+                  projectDescription,
+                  projectStacks,
+                  isPublic,
+                  sourceCodeLink,
+                  imageSrc,
+                  isHighlight,
+                  reverse,
+                },
+                i,
+              ) => (
+                <ProjectsCard
+                  key={i}
+                  siteLink={siteLink}
+                  projectName={projectName}
+                  projectDate={projectDate}
+                  projectDescription={projectDescription}
+                  projectStacks={projectStacks}
+                  isPublic={isPublic}
+                  sourceCodeLink={sourceCodeLink}
+                  imageSrc={imageSrc}
+                  isHighlight={isHighlight}
+                  reverse={reverse}
+                />
+              ),
+            )}
+          </div>
+        </div>
       </div>
-      <motion.h3
-        className="text-2xl text-center mt-16 font-bold"
-        variants={animation()}
-        initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: true,
-        }}
-      >
-        Other Projects
-      </motion.h3>
-      <div className="flex gap-8 justify-center flex-wrap mt-16">
-        {projects
-          .filter((project) => !project.isHighlight)
-          .map(
-            (
-              {
-                siteLink,
-                projectName,
-                projectDate,
-                projectDescription,
-                projectStacks,
-                isPublic,
-                sourceCodeLink,
-                imageSrc,
-                isHighlight,
-                reverse,
-              },
-              i,
-            ) => (
-              <ProjectsCard
-                key={i}
-                siteLink={siteLink}
-                projectName={projectName}
-                projectDate={projectDate}
-                projectDescription={projectDescription}
-                projectStacks={projectStacks}
-                isPublic={isPublic}
-                sourceCodeLink={sourceCodeLink}
-                imageSrc={imageSrc}
-                isHighlight={isHighlight}
-                reverse={reverse}
-              />
-            ),
-          )}
-      </div>
-    </div>
+    </section>
   );
 }
