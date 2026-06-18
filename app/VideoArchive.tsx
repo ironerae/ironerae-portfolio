@@ -15,6 +15,16 @@ type VideoItem = {
 
 const videos: VideoItem[] = [
   {
+    title: "Intro to Building Your Own DIY 3D Printer",
+    description:
+      "Seminar session organized by ACES - Fullbright College that introduce the fundamentals of designing and building a DIY 3D printer from the ground up.",
+    category: "Presentation",
+    runtime: "2:58:33",
+    year: "2026",
+    youtubeUrl: "https://youtu.be/ln6gCa6M3-c?si=1my7p0v36J5KVE-O",
+    videoId: "ln6gCa6M3-c",
+  },
+  {
     title: "How to install OS in VM",
     description:
       "A step-by-step guide on installing an operating system inside a Virtual Machine.",
