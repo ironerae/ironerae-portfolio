@@ -50,6 +50,32 @@ const projects = [
   },
   {
     siteLink: "",
+    projectName: "Spin the IRON",
+    projectDate: "Sep 2026",
+    projectDescription:
+      "A custom-engineered ring-spinner combat robot. Designed for 600g combat category, the robot recently secured a 4th-place finish during SMARRT PALAWAN 2026.",
+    projectStacks: [] as unknown[] as IconType[],
+    isPublic: true,
+    sourceCodeLink: "https://github.com/ironerae/Spin-the-IRON",
+    imageSrc: "/images/projects/spin-the-iron.jpg",
+    isHighlight: true,
+    reverse: false,
+  },
+  {
+    siteLink: "https://alagavax.vercel.app/",
+    projectName: "Alagavax",
+    projectDate: "Sept 2026",
+    projectDescription:
+      "Client Project: A next generation vaccine transport system built for remote and indigenous communities. Featuring a hybrid cooling system, electronic lock, tracking and YOLO-Based Inventory System.",
+    projectStacks: [] as unknown[] as IconType[],
+    isPublic: false,
+    sourceCodeLink: "https://github.com/ironerae/AlagaVax",
+    imageSrc: "/images/projects/alagavax.jpg",
+    isHighlight: true,
+    reverse: true,
+  },
+  {
+    siteLink: "",
     projectName: "VorCore 10",
     projectDate: "June 2026",
     projectDescription:
@@ -168,7 +194,7 @@ export default function Projects() {
 
   return (
     <section className="mt-24 scroll-mt-24" id="projects">
-      <div className="rounded-3xl border border-base-300 bg-base-100/80 px-5 py-8 shadow-xl backdrop-blur md:px-8 md:py-10">
+      <div className="px-5 py-8 md:px-8 md:py-10">
         <div className="flex flex-col gap-10">
           <motion.div
             className="max-w-3xl"

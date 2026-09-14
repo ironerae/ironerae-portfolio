@@ -118,10 +118,7 @@ export default function ProjectsCard({
     >
       <div className="flex-1">
         {isPublic ? (
-          <div
-            className="tooltip"
-            data-tip="Repo is publicly accessible to anyone"
-          >
+          <div className="tooltip" data-tip="Repo is public">
             <motion.div
               className="badge badge-error"
               variants={fade}
